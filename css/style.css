@@ -1022,6 +1022,13 @@ body::before {
     text-shadow: 0 0 5px #ff0000;
 }
 
+.status-archived {
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.2) 0%, rgba(100, 100, 100, 0.2) 100%);
+    color: #808080;
+    border-color: #808080;
+    text-shadow: 0 0 5px #808080;
+}
+
 /* 项目描述 */
 .project-description {
     color: #c0e6ff;

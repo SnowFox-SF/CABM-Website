@@ -7,6 +7,8 @@ function navigateToProject(projectName) {
             window.location.href = 'CABM-ED/index.html';
             break;
         case 'CABM':
+            window.location.href = 'CABM/index.html';
+            break;
         case 'CABM-DTP':
         case 'CABM-TS':
         case 'CABM-MS':
