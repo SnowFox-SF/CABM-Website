@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CABM - Everlasting Days | 文档中心</title>
+    <title>CABM | Code Afflatus & Beyond Matter</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
 </head>
@@ -12,37 +12,84 @@
 
     <div class="container">
         <header class="header">
-            <h1 class="title">CABM - Everlasting Days</h1>
-            <p class="subtitle">有些相遇，注定要跨越「代码」与「现实」的边界</p>
+            <h1 class="title">CABM</h1>
+            <h2 class="subtitle-main">Code Afflatus & Beyond Matter</h2>
+            <p class="description">当灵性注入载体，它便挣脱物质躯壳，抵达超验之境。</p>
             <div class="divider"></div>
         </header>
 
-        <nav class="nav">
-            <div class="nav-section">
-                <h2>📖 主要文档</h2>
-                <ul class="doc-list">
-                    <li><a href="docs/readme.html" class="doc-link">项目介绍 (README)</a></li>
-                    <li><a href="docs/readme-sw.html" class="doc-link">项目介绍 (SW版)</a></li>
-                    <li><a href="docs/contributing.html" class="doc-link">贡献指南</a></li>
-                </ul>
+        <main class="projects-grid">
+            <div class="project-card" data-status="semi-active" onclick="navigateToProject('CABM')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM</h3>
+                    <span class="project-status status-semi-active">半活跃</span>
+                </div>
+                <p class="project-description">CABM主项目，AI对话类游戏，Python+JavaScript架构，可以自由地创建角色</p>
             </div>
 
-            <div class="nav-section">
-                <h2>📚 详细文档</h2>
-                <ul class="doc-list">
-                    <li><a href="docs/introduction.html" class="doc-link">CABM-ED背景故事</a></li>
-                    <li><a href="docs/memory-system.html" class="doc-link">关于记忆力的说明</a></li>
-                    <li><a href="docs/faq.html" class="doc-link">常见问题 (FAQ)</a></li>
-                </ul>
+            <div class="project-card" data-status="active" onclick="navigateToProject('CABM-ED')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-ED</h3>
+                    <span class="project-status status-active">活跃</span>
+                </div>
+                <p class="project-description">AI养成类游戏，多平台支持：你从街边捡到个白毛少女，把她带回家……</p>
             </div>
-        </nav>
+
+            <div class="project-card" data-status="semi-active" onclick="navigateToProject('CABM-DTP')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-DTP</h3>
+                    <span class="project-status status-semi-active">半活跃</span>
+                </div>
+                <p class="project-description">AI驱动的桌面宠物，倾向于操作系统agent，仅支持Windows</p>
+            </div>
+
+            <div class="project-card" data-status="developing" onclick="navigateToProject('CABM-TS')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-TS</h3>
+                    <span class="project-status status-developing">开发中</span>
+                </div>
+                <p class="project-description">由EveGlowLuna开发，暂无信息</p>
+            </div>
+
+            <div class="project-card" data-status="abandoned" onclick="navigateToProject('CABM-MS')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-MS</h3>
+                    <span class="project-status status-abandoned">废弃</span>
+                </div>
+                <p class="project-description">旨在研究和试验AI长期记忆的可行性，为CABM-ED提供技术支持</p>
+            </div>
+
+            <div class="project-card" data-status="abandoned" onclick="navigateToProject('CABM-QB')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-QB</h3>
+                    <span class="project-status status-abandoned">废弃</span>
+                </div>
+                <p class="project-description">基于OCR和模拟输入的QQ机器人</p>
+            </div>
+
+            <div class="project-card" data-status="abandoned" onclick="navigateToProject('CABM-OSA')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM-OSA</h3>
+                    <span class="project-status status-abandoned">废弃</span>
+                </div>
+                <p class="project-description">操作系统agent，已被CABM-DTP替代</p>
+            </div>
+
+            <div class="project-card" data-status="abandoned" onclick="navigateToProject('CABM-Java')">
+                <div class="project-header">
+                    <h3 class="project-title">CABM4J</h3>
+                    <span class="project-status status-abandoned">废弃</span>
+                </div>
+                <p class="project-description">由Shasnow开发，CABM主项目的Java版本实现</p>
+            </div>
+        </main>
 
         <footer class="footer">
             <p class="footer-text">「当灵性注入载体，它便挣脱物质躯壳，抵达超验之境」</p>
             <div class="footer-links">
-                <a href="https://github.com/SnowFox-SF/CABM-ED" target="_blank" class="footer-link">GitHub 仓库</a>
-                <span class="separator">|</span>
                 <a href="https://github.com/xhc2008/CABM" target="_blank" class="footer-link">CABM 项目</a>
+                <span class="separator">|</span>
+                <a href="https://github.com/SnowFox-SF/CABM-ED" target="_blank" class="footer-link">CABM-ED 仓库</a>
             </div>
         </footer>
     </div>

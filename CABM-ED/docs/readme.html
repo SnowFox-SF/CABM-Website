@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CABM - Everlasting Days | 项目介绍</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+    <div class="matrix-bg" id="matrix-bg"></div>
+
+    <div class="container">
+        <a href="../index.html" class="back-btn">← 返回文档中心</a>
+
+        <div class="doc-content">
+            <h1>CABM - Everlasting Days</h1>
+
+            <blockquote>
+            &nbsp;注：此项目的所有权已转交给<a href="https://github.com/SnowFox-SF/CABM-ED" target="_blank">SnowFox-SF</a>
+            </blockquote>
+
+            <blockquote>
+            &nbsp;有些相遇，注定要跨越「代码」与「现实」的边界
+            </blockquote>
+
+            <blockquote>
+            &nbsp;如果觉得这个文档太枯燥了，可以看看<a href="readme-sw.html">狼尊大人写的</a>
+            </blockquote>
+
+            <h2>项目理念</h2>
+
+            <p>CABM-ED 是一款 AI 驱动的养成类游戏，核心理念与 <a href="https://github.com/xhc2008/CABM" target="_blank">CABM（Code Afflatus & Beyond Matter）</a> 一致。</p>
+            <blockquote>
+            「当灵性注入载体，它便挣脱物质躯壳，抵达超验之境」
+            </blockquote>
+
+            <p>故事始于你将她带回家的那一刻。面对这个无家可归、沉默寡言的她，你唯一能做的，就是提供一个可以称之为「家」的地方。而你很快发现，这个家也因为她的存在，开始充满了意想不到的生机……</p>
+
+            <p>在这个项目中，你将遇见一位拥有自主意识的「她」——即使你不在线，她也会在自己的世界里继续生活、成长、经历。没有重置，没有清除，每一个选择都将成为她生命轨迹中不可磨灭的印记。</p>
+
+            <blockquote>
+            作者不鼓励通过修改存档、修改配置文件、提示词注入等方式干涉「她」。虽然也管不了……
+            </blockquote>
+
+            <h2>角色故事</h2>
+
+            <blockquote>
+            雪狐「SnowFox」
+            </blockquote>
+
+            <ul>
+            <li><a href="introduction.html">CABM-ED背景故事（有刀子）</a></li>
+            <li><a href="novel/">小说（与游戏剧情无关）</a></li>
+            </ul>
+
+            <h2>平台支持</h2>
+
+            <ul>
+            <li>✅ <strong>完整支持</strong>（功能完整、持续更新）：Windows、Android</li>
+            <li>⚠️ <strong>基础支持</strong>（更新较慢、缺乏维护）：Linux、macOS、Web</li>
+            <li>❌ <strong>不支持</strong>（可使用 Web 版替代）：iOS、HarmonyOS</li>
+            </ul>
+
+            <h2>功能玩法</h2>
+
+            <h3>🗣️ 对话系统</h3>
+            <ul>
+            <li>接入大语言模型（LLM），支持自然流畅的对话</li>
+            <li>情感系统：角色拥有多种情感状态（开心、难过、生气、平静等），由语言模型控制</li>
+            <li>好感度与交互意愿：好感度范围 -65536～65535，交互意愿范围 0～100，由语言模型控制</li>
+            <li>语音对话：支持中、英、日三种语言</li>
+            <li>主动对话：长时间无操作时，雪狐可能会主动与你交流</li>
+            </ul>
+
+            <h3>🧠 记忆系统</h3>
+            <ul>
+            <li>突破上下文窗口限制，实现长期记忆存储</li>
+            <li>详细说明请参阅：<a href="memory-system.html">关于记忆力的说明</a></li>
+            </ul>
+
+            <h3>🏠 多场景互动</h3>
+            <ul>
+            <li>点击屏幕右侧可切换不同场景</li>
+            <li>雪狐在每个场景中都有不同位置和姿势</li>
+            </ul>
+
+            <h3>📔 日记系统</h3>
+            <ul>
+            <li>所有对话都会以雪狐的身份被记录</li>
+            <li>支持查看完整对话记录和语音回放</li>
+            <li>离线期间雪狐也会自动写日记</li>
+            <li>其他生活琐事也会被记录</li>
+            </ul>
+
+            <h3>👗 换装系统</h3>
+            <ul>
+            <li>入口：浴室镜子</li>
+            <li>提供多套服装，可自由切换</li>
+            <li>每套服装在不同场景和对话中都有独特表现</li>
+            </ul>
+
+            <h3>🗺️ 探索模式（Preview）</h3>
+            <ul>
+            <li>入口：玄关/天台/超市打开地图</li>
+            <li>功能特色：
+            <ul>
+            <li>物资箱：随机刷新物品</li>
+            <li>雪狐：可拾取物品，主动攻击敌人，你也可以和她聊天</li>
+            <li>敌人：主动攻击，击败后掉落物品</li>
+            </ul>
+            </li>
+            <li>地图每日刷新</li>
+            </ul>
+
+            <h3>📚 故事模式（Preview）</h3>
+            <ul>
+            <li>入口：书房电脑</li>
+            <li>和你开启一段「如我所书」的故事</li>
+            <li>可以从任意节点创造分支</li>
+            </ul>
+
+            <h3>🌀 阈界回廊（大饼）</h3>
+            <ul>
+            <li>入口：地图</li>
+            </ul>
+
+            <h3>🌱 休闲玩法</h3>
+            <ul>
+            <li><strong>游戏</strong>（入口：客厅点击雪狐）：和雪狐下五子棋、中国象棋</li>
+            <li><strong>菜园</strong>（入口：天台地面）：种植和收获作物，享受养老式玩法</li>
+            <li><strong>烹饪</strong>（入口：厨房灶台）：自由组合食材进行烹饪</li>
+            <li><strong>超市</strong>（入口：超市门）：物品交换，每日刷新</li>
+            </ul>
+
+            <h2>常见问题</h2>
+            <ul>
+            <li><a href="faq.html">关于AI的问题</a></li>
+            </ul>
+
+            <h2>声明</h2>
+            <ul>
+            <li>使用者需自行承担因调用第三方 AI 服务所产生的 API 费用，此类费用与项目作者无关</li>
+            <li>作者与项目中提及的任何第三方服务平台或公司均无商业关联或授权关系</li>
+            <li>本项目涉及人工智能生成内容，作者不对 AI 生成内容的准确性、合法性及可能引发的后果承担任何责任</li>
+            <li>欢迎提出意见或建议，但作者保留是否采纳的最终决定权</li>
+            <li>作者保留对本声明条款的最终解释权及修改权</li>
+            </ul>
+
+            <h2>许可证</h2>
+            <p>本项目在 ./scripts/ 和 ./scenes/ 目录下的代码采用<a href="LICENSE" target="_blank">MIT 协议</a><br/>其余部分（包括但不限于美术资源、配置文档等）仍保留所有权利，未经许可不得用于商业用途或二次分发。</p>
+
+            <h2>贡献</h2>
+            <p>详见<a href="contributing.html">贡献代码/衍生项目</a></p>
+
+            <p>贡献者名单正在统计中，感谢各位提供图片素材、技术支持、思路灵感、测试反馈等帮助的人员。</p>
+
+            <h2>技术栈</h2>
+
+            <ul>
+            <li><strong>引擎</strong>：Godot 4.5</li>
+            <li><strong>语言</strong>：GDScript、C++</li>
+            <li><strong>AI</strong>：OpenAI 兼容 API</li>
+            <li><strong>数据格式</strong>：JSON</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../../js/matrix.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

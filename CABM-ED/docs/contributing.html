@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CABM - Everlasting Days | 贡献指南</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+    <div class="matrix-bg" id="matrix-bg"></div>
+
+    <div class="container">
+        <a href="../index.html" class="back-btn">← 返回文档中心</a>
+
+        <div class="doc-content">
+            <h1>贡献代码/衍生项目</h1>
+
+            <h2>开始之前</h2>
+
+            <h3>1. 了解项目</h3>
+            <ul>
+            <li>请先阅读 <a href="readme.html">README.md</a> 了解项目理念、功能、使用方式、协议、架构等</li>
+            </ul>
+
+            <h3>2. 开发环境准备</h3>
+
+            <h4>Git 安装与配置</h4>
+            <ol>
+            <li><strong>下载 Git</strong>
+            <ul>
+            <li>Windows: 从 <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a> 下载</li>
+            <li>macOS: 使用 Homebrew `brew install git` 或从官网下载</li>
+            <li>Linux: 使用包管理器安装，如 `sudo apt install git` (Ubuntu/Debian)</li>
+            </ul>
+            </li>
+
+            <li><strong>配置 Git</strong></li>
+            </ol>
+
+            <pre><code>git config --global user.name "你的名字"
+git config --global user.email "你的邮箱"</code></pre>
+
+            <h4>项目克隆</h4>
+            <pre><code># 克隆项目到本地
+git clone https://github.com/SnowFox-SF/CABM-ED.git
+cd CABM-ED</code></pre>
+
+            <h4>Godot 引擎安装</h4>
+            <ul>
+            <li>下载 <a href="https://godotengine.org/download/" target="_blank">Godot 4.5</a> 或更高版本</li>
+            <li>确保使用与项目兼容的版本</li>
+            </ul>
+
+            <h2>贡献流程</h2>
+
+            <h3>1. 创建 Issue（可选但推荐）</h3>
+            <ul>
+            <li>在 <a href="https://github.com/SnowFox-SF/CABM-ED/issues" target="_blank">Issues</a>与<a href="https://docs.qq.com/sheet/DZHdYdGhIa1Z6VmZk" target="_blank">反馈表</a>中查看是否已有类似问题</li>
+            <li>如果没有，创建一个新 Issue 描述你的想法或发现的 bug</li>
+            <li>明确说明：问题描述、重现步骤、预期行为、实际行为</li>
+            </ul>
+
+            <h3>2. 分支管理</h3>
+            <pre><code># 同步主分支
+git checkout main
+git pull origin main
+
+# 创建功能分支
+git checkout -b feature/你的功能名称
+# 或修复分支
+git checkout -b fix/修复的问题描述</code></pre>
+
+            <h3>3. 代码规范</h3>
+            <ul>
+            <li><strong>GDScript</strong>: 遵循 Godot 官方 GDScript 风格指南</li>
+            <li><strong>C++</strong>: 使用一致的命名约定和代码格式，最好同时提交编译好的插件</li>
+            <li><strong>注释</strong>: 关键算法和复杂逻辑需要添加注释</li>
+            <li><strong>提交信息</strong>: 使用清晰、有意义的提交信息</li>
+            </ul>
+
+            <h3>4. 测试你的改动</h3>
+            <ol>
+            <li>在 Godot 编辑器中测试你的功能</li>
+            <li>确保没有引入新的错误</li>
+            <li>在不同场景下验证功能正常</li>
+            </ol>
+
+            <h3>5. 提交更改</h3>
+            <pre><code># 添加修改的文件
+git add .
+
+# 提交更改
+git commit -m "描述你的修改内容"
+
+# 推送到远程
+git push origin 你的分支名称</code></pre>
+
+            <h3>6. 创建 Pull Request</h3>
+            <ol>
+            <li>访问项目的 GitHub 仓库</li>
+            <li>点击 "New Pull Request"</li>
+            <li>选择你的分支与主分支进行比较</li>
+            <li>填写 PR 描述，包括：
+            <ul>
+            <li>修改内容概述</li>
+            <li>解决的问题或添加的功能</li>
+            <li>测试情况说明</li>
+            <li>相关 Issue 编号（如果有）</li>
+            </ul>
+            </li>
+            </ol>
+
+            <h2>衍生项目开发</h2>
+
+            <p>如果你计划基于 CABM-ED 开发衍生项目，请注意：</p>
+
+            <h3>许可协议</h3>
+            <ul>
+            <li>你可以自由使用 `./scripts/` 和 `./scenes/` 目录下的 MIT 许可代码</li>
+            <li>其他资源（美术、配置等）<strong>不得用于商业</strong></li>
+            <li>衍生项目需要明确声明代码来源和授权范围</li>
+            </ul>
+
+            <h3>开发建议</h3>
+            <ol>
+            <li><strong>保持兼容</strong>: 尽量与主项目保持兼容性（例如存档文件）</li>
+            <li><strong>明确差异</strong>: 清楚说明你的项目与原始项目的区别</li>
+            <li><strong>遵守协议</strong>: 严格遵守不同资源的许可协议</li>
+            </ol>
+
+            <h3>注意事项</h3>
+            <ul>
+            <li>未经许可不得使用项目中的角色设定、故事内容等原创元素</li>
+            <li>不得误导用户认为衍生项目是官方版本</li>
+            <li>建议在项目文档中明确标注 "基于 CABM-ED"</li>
+            </ul>
+
+            <h2>获取帮助</h2>
+
+            <h3>沟通渠道</h3>
+            <ul>
+            <li><strong>GitHub Issues</strong>: 功能建议、bug 报告</li>
+            <li><strong>QQ群</strong>: 236025099</li>
+            </ul>
+
+            <h3>联系开发者</h3>
+            <p>在提交重要改动前，建议先开发者沟通，确保你的贡献方向与项目规划一致。</p>
+
+            <hr/>
+
+            <p>感谢你为 CABM-ED 项目做出的贡献！每一次贡献都让这个项目更加完善，让"她"的世界更加丰富。</p>
+        </div>
+    </div>
+
+    <script src="../../js/matrix.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
