@@ -1,0 +1,286 @@
+/* 贡献者页面样式 */
+
+.contributors-content {
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.95) 0%, rgba(0, 40, 80, 0.9) 100%);
+    border: 2px solid #00d4ff;
+    padding: 50px;
+    margin: 30px 0;
+    backdrop-filter: blur(20px);
+    line-height: 1.8;
+    border-radius: 15px;
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contributors-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+}
+
+.contributors-content h1 {
+    color: #00d4ff;
+    margin: 40px 0 50px 0;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    position: relative;
+    text-align: center;
+    background: linear-gradient(45deg, #00d4ff, #0080ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contributors-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    border-radius: 2px;
+}
+
+/* 贡献者网格 */
+.contributors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* 贡献者卡片 */
+.contributor-card {
+    background: linear-gradient(135deg, rgba(0, 10, 30, 0.9) 0%, rgba(0, 20, 50, 0.8) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+        0 0 20px rgba(0, 212, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.contributor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.contributor-card:hover::before {
+    opacity: 1;
+}
+
+.contributor-card:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 10px 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: #00d4ff;
+}
+
+/* 贡献者头像 */
+.contributor-avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contributor-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #00d4ff;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.contributor-card:hover .contributor-avatar img {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* 贡献者信息 */
+.contributor-info {
+    text-align: center;
+}
+
+.contributor-name {
+    color: #00d4ff;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.contributor-display-name {
+    color: #80e6ff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+/* 贡献者标签 */
+.contributor-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid;
+    transition: all 0.3s ease;
+}
+
+.tag-code {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 128, 255, 0.2) 100%);
+    color: #00d4ff;
+    border-color: #00d4ff;
+    text-shadow: 0 0 5px #00d4ff;
+}
+
+.tag-design {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2) 0%, rgba(255, 20, 147, 0.2) 100%);
+    color: #ff69b4;
+    border-color: #ff69b4;
+    text-shadow: 0 0 5px #ff69b4;
+}
+
+.tag-art {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(255, 165, 0, 0.2) 100%);
+    color: #ffd700;
+    border-color: #ffd700;
+    text-shadow: 0 0 5px #ffd700;
+}
+
+.tag-documentation {
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.2) 0%, rgba(0, 128, 0, 0.2) 100%);
+    color: #32cd32;
+    border-color: #32cd32;
+    text-shadow: 0 0 5px #32cd32;
+}
+
+.tag-community {
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.2) 0%, rgba(75, 0, 130, 0.2) 100%);
+    color: #8a2be2;
+    border-color: #8a2be2;
+    text-shadow: 0 0 5px #8a2be2;
+}
+
+.tag-testing {
+    background: linear-gradient(135deg, rgba(255, 69, 0, 0.2) 0%, rgba(220, 20, 60, 0.2) 100%);
+    color: #ff4500;
+    border-color: #ff4500;
+    text-shadow: 0 0 5px #ff4500;
+}
+
+.tag-ops {
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2) 0%, rgba(255, 69, 0, 0.2) 100%);
+    color: #ff8c00;
+    border-color: #ff8c00;
+    text-shadow: 0 0 5px #ff8c00;
+}
+
+.tag-support {
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.2) 0%, rgba(0, 191, 255, 0.2) 100%);
+    color: #1e90ff;
+    border-color: #1e90ff;
+    text-shadow: 0 0 5px #1e90ff;
+}
+
+/* 贡献者简介 */
+.contributor-bio {
+    color: #c0e6ff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .contributors-content {
+        padding: 30px;
+    }
+
+    .contributors-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contributor-card {
+        padding: 20px;
+    }
+
+    .contributor-avatar img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contributor-name {
+        font-size: 1.2rem;
+    }
+
+    .contributor-display-name {
+        font-size: 0.9rem;
+    }
+
+    .tag {
+        font-size: 0.8rem;
+        padding: 3px 10px;
+    }
+
+    .contributor-bio {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contributors-content {
+        padding: 25px;
+    }
+
+    .contributor-card {
+        padding: 18px;
+    }
+
+    .contributor-avatar img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contributor-name {
+        font-size: 1.1rem;
+    }
+
+    .contributors-grid {
+        gap: 15px;
+    }
+}

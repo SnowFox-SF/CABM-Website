@@ -120,6 +120,212 @@ body::before {
     margin-bottom: 80px;
 }
 
+/* 新网格导航样式 */
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* 平台支持样式 */
+.platform-support {
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
+    border: 2px solid #00d4ff;
+    padding: 25px;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-support::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+}
+
+.platform-support h2 {
+    color: #00d4ff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    position: relative;
+}
+
+.platform-support h2::after {
+    content: '◆';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #0080ff;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.platform-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.platform-item {
+    background: linear-gradient(135deg, rgba(0, 10, 30, 0.9) 0%, rgba(0, 20, 50, 0.8) 100%);
+    border: 2px solid;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.platform-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.platform-item:hover::before {
+    opacity: 1;
+}
+
+.platform-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.platform-item.supported {
+    border-color: #00ff00;
+    background: linear-gradient(135deg, rgba(0, 50, 0, 0.9) 0%, rgba(0, 100, 0, 0.8) 100%);
+}
+
+.platform-item.partial {
+    border-color: #ffa500;
+    background: linear-gradient(135deg, rgba(50, 25, 0, 0.9) 0%, rgba(100, 50, 0, 0.8) 100%);
+}
+
+.platform-item.unsupported {
+    border-color: #ff0000;
+    background: linear-gradient(135deg, rgba(50, 0, 0, 0.9) 0%, rgba(100, 0, 0, 0.8) 100%);
+}
+
+.platform-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.platform-info h3 {
+    color: #ffffff;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.platform-info p {
+    color: #c0e6ff;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.platform-list {
+    color: #80e6ff !important;
+    font-style: italic;
+}
+
+/* 主要导航样式 */
+.main-nav {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* 项目声明样式 */
+.project-statement {
+    margin-bottom: 80px;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
+    border: 2px solid #00d4ff;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-statement::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+}
+
+.project-statement h2 {
+    color: #00d4ff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    position: relative;
+}
+
+.project-statement h2::after {
+    content: '◆';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #0080ff;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.statement-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.statement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.statement-list li {
+    color: #c0e6ff;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.statement-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    font-weight: bold;
+}
+
 .nav-section {
     background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
     border: 2px solid #00d4ff;
@@ -224,6 +430,34 @@ body::before {
     box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
 }
 
+/* 信息内容样式 */
+.info-content {
+    color: #c0e6ff;
+}
+
+.info-content h3 {
+    color: #00d4ff;
+    font-size: 1.4rem;
+    margin: 25px 0 15px 0;
+    border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 8px;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.info-content ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.info-content li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.info-content li strong {
+    color: #00d4ff;
+}
+
 /* 页脚样式 */
 .footer {
     text-align: center;
@@ -306,6 +540,52 @@ body::before {
     .nav {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .main-nav {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .platform-support {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .platform-support h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .platform-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .platform-item {
+        padding: 12px;
+    }
+
+    .platform-icon {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .platform-info h3 {
+        font-size: 1rem;
+    }
+
+    .platform-info p {
+        font-size: 0.8rem;
+    }
+
+    .project-statement {
+        padding: 30px;
     }
 
     .nav-section {
@@ -812,5 +1092,46 @@ body::before {
 
     .description {
         font-size: 1.1rem;
+    }
+
+    .platform-support {
+        padding: 18px;
+        margin-bottom: 25px;
+    }
+
+    .platform-support h2 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .platform-grid {
+        gap: 10px;
+    }
+
+    .platform-item {
+        padding: 10px;
+    }
+
+    .platform-icon {
+        font-size: 1.6rem;
+        margin-bottom: 6px;
+    }
+
+    .platform-info h3 {
+        font-size: 1rem;
+        margin-bottom: 4px;
+    }
+
+    .platform-info p {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+
+    .project-statement {
+        padding: 25px;
+    }
+
+    .project-statement h2 {
+        font-size: 1.6rem;
     }
 }
