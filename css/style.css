@@ -1,0 +1,600 @@
+/* 现代科幻风格 CSS - CABM文档网站 */
+
+/* 基础重置和字体 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Consolas', 'Monaco', monospace;
+    background: linear-gradient(135deg, #001122 0%, #002244 50%, #003366 100%);
+    color: #00d4ff;
+    overflow-x: hidden;
+    line-height: 1.6;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 128, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(0, 255, 255, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container {
+    position: relative;
+    z-index: 10;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* 01数据流背景 */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 60px 30px;
+    border: 2px solid #00d4ff;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+    animation: scan 3s linear infinite;
+}
+
+.title {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    text-shadow:
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff,
+        0 0 60px #0080ff;
+    animation: glow 3s ease-in-out infinite alternate;
+    background: linear-gradient(45deg, #00d4ff, #0080ff, #00ffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #80e6ff;
+    opacity: 0.9;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    font-weight: 300;
+}
+
+.divider {
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, #0080ff, #00d4ff, transparent);
+    margin: 35px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+/* 导航样式 */
+.nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+.nav-section {
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
+    border: 2px solid #00d4ff;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    box-shadow:
+        0 0 25px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.nav-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.nav-section:hover::before {
+    opacity: 1;
+}
+
+.nav-section:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 10px 40px rgba(0, 212, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.nav-section h2 {
+    color: #00d4ff;
+    margin-bottom: 25px;
+    font-size: 1.6rem;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    position: relative;
+}
+
+.nav-section h2::after {
+    content: '◆';
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #0080ff;
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.doc-list {
+    list-style: none;
+}
+
+.doc-list li {
+    margin-bottom: 18px;
+}
+
+.doc-link {
+    color: #80e6ff;
+    text-decoration: none;
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 128, 255, 0.05) 100%);
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+.doc-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.doc-link:hover::before {
+    left: 100%;
+}
+
+.doc-link:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 128, 255, 0.15) 100%);
+    border-color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff;
+    transform: translateX(15px) scale(1.02);
+    color: #00d4ff;
+    box-shadow: 0 5px 20px rgba(0, 212, 255, 0.2);
+}
+
+/* 页脚样式 */
+.footer {
+    text-align: center;
+    padding: 50px 30px;
+    border-top: 2px solid #00d4ff;
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.9) 0%, rgba(0, 40, 80, 0.8) 100%);
+    backdrop-filter: blur(20px);
+    border-radius: 15px;
+    margin-top: 40px;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+.footer-text {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-style: italic;
+    color: #80e6ff;
+    opacity: 0.9;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    font-weight: 300;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-link {
+    color: #00d4ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 212, 255, 0.5);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, rgba(0, 128, 255, 0.05) 100%);
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    text-shadow: 0 0 15px #00d4ff;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 128, 255, 0.15) 100%);
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+.separator {
+    color: #00d4ff;
+    opacity: 0.5;
+    font-size: 1.2em;
+}
+
+/* 动画效果 */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 20px #00d4ff, 0 0 30px #00d4ff;
+    }
+    to {
+        text-shadow: 0 0 30px #00d4ff, 0 0 50px #0080ff, 0 0 70px #00d4ff;
+    }
+}
+
+@keyframes scan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .nav {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .nav-section {
+        padding: 30px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .doc-content {
+        padding: 30px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .nav-section {
+        padding: 25px;
+    }
+
+    .nav-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .doc-link {
+        font-size: 1rem;
+        padding: 12px 18px;
+    }
+
+    .doc-content {
+        padding: 25px;
+    }
+
+    .doc-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .doc-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .doc-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .footer-text {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+/* 文档页面样式 */
+.doc-content {
+    background: linear-gradient(135deg, rgba(0, 20, 40, 0.95) 0%, rgba(0, 40, 80, 0.9) 100%);
+    border: 2px solid #00d4ff;
+    padding: 50px;
+    margin: 30px 0;
+    backdrop-filter: blur(20px);
+    line-height: 1.8;
+    border-radius: 15px;
+    box-shadow:
+        0 0 30px rgba(0, 212, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.doc-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4ff, #0080ff, #00d4ff);
+}
+
+.doc-content h1,
+.doc-content h2,
+.doc-content h3,
+.doc-content h4 {
+    color: #00d4ff;
+    margin: 40px 0 25px 0;
+    border-bottom: 2px solid #00d4ff;
+    padding-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    position: relative;
+}
+
+.doc-content h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 50px;
+    background: linear-gradient(45deg, #00d4ff, #0080ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.doc-content h1::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    border-radius: 2px;
+}
+
+.doc-content h2 {
+    font-size: 2.2rem;
+}
+
+.doc-content h3 {
+    font-size: 1.7rem;
+}
+
+.doc-content p {
+    margin-bottom: 25px;
+    color: #c0e6ff;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.doc-content ul,
+.doc-content ol {
+    margin: 25px 0;
+    padding-left: 35px;
+}
+
+.doc-content li {
+    margin-bottom: 12px;
+    color: #c0e6ff;
+    position: relative;
+}
+
+.doc-content li::marker {
+    color: #00d4ff;
+}
+
+.doc-content code {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%);
+    color: #00d4ff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    font-weight: 500;
+}
+
+.doc-content pre {
+    background: linear-gradient(135deg, rgba(0, 10, 30, 0.9) 0%, rgba(0, 20, 50, 0.8) 100%);
+    border: 2px solid #00d4ff;
+    padding: 25px;
+    margin: 25px 0;
+    overflow-x: auto;
+    color: #00d4ff;
+    border-radius: 10px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    font-size: 0.95rem;
+}
+
+.doc-content blockquote {
+    border-left: 4px solid #00d4ff;
+    padding-left: 25px;
+    margin: 25px 0;
+    color: #80e6ff;
+    font-style: italic;
+    background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+    padding: 20px 25px;
+    border-radius: 0 10px 10px 0;
+    position: relative;
+}
+
+.doc-content blockquote::before {
+    content: '"';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #00d4ff;
+    font-size: 2em;
+    opacity: 0.5;
+}
+
+.doc-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: linear-gradient(135deg, rgba(0, 10, 30, 0.9) 0%, rgba(0, 20, 50, 0.8) 100%);
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+}
+
+.doc-content th,
+.doc-content td {
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    padding: 15px;
+    text-align: left;
+    color: #c0e6ff;
+}
+
+.doc-content th {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 128, 255, 0.15) 100%);
+    color: #00d4ff;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.doc-content a {
+    color: #00d4ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.doc-content a:hover {
+    text-shadow: 0 0 15px #00d4ff;
+    border-bottom-color: #00d4ff;
+    transform: translateY(-1px);
+}
+
+/* 返回按钮 */
+.back-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 128, 255, 0.1) 100%);
+    border: 2px solid #00d4ff;
+    color: #00d4ff;
+    padding: 12px 25px;
+    text-decoration: none;
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    font-family: 'Courier New', monospace;
+    border-radius: 8px;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.back-btn::before {
+    content: '◄';
+    margin-right: 8px;
+    color: #0080ff;
+}
+
+.back-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.back-btn:hover::after {
+    left: 100%;
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 128, 255, 0.2) 100%);
+    text-shadow: 0 0 15px #00d4ff;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3);
+}
